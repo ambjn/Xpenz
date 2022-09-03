@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:xpenz/screens/splash_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,6 +27,10 @@ class MyApp extends StatelessWidget {
           elevation: 0,
         ),
       ),
+      initialRoute: '/',
+      getPages: [
+        GetPage(name: '/', page: () => SplashScreen()),
+      ],
     );
   }
 }
