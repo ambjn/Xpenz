@@ -52,17 +52,20 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                     const SizedBox(width: 100),
-                    const Icon(
-                      FontAwesomeIcons.moneyBillTrendUp,
-                      color: Colors.grey,
-                      size: 25,
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        FontAwesomeIcons.bars,
+                        color: Colors.grey,
+                        size: 30,
+                      ),
                     )
                   ],
                 ),
               ],
             ),
           ),
-          const SizedBox(height: 5),
+          const SizedBox(height: 10),
           const Divider(thickness: 0.5)
         ],
       )),
