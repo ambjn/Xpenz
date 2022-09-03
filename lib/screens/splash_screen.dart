@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class SplashScreen extends StatelessWidget {
-  SplashScreen({super.key});
-
-  final TextEditingController nameController = TextEditingController();
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,67 +12,53 @@ class SplashScreen extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                padding: const EdgeInsets.only(top: 75, left: 20),
+                padding: const EdgeInsets.only(top: 100, left: 25),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    const Text(
-                      "BluPE💰",
-                      style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 2),
-                    ),
-                    const SizedBox(height: 25),
-                    Container(
-                      alignment: Alignment.centerLeft,
-                      child: Image.asset(
-                        'assets/images/splash_screen_image.png',
-                      ),
+                    Row(
+                      children: const [
+                        Text(
+                          "X",
+                          style: TextStyle(
+                              color: Colors.amberAccent,
+                              fontSize: 50,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 2),
+                        ),
+                        Text(
+                          "pen",
+                          style: TextStyle(
+                              fontSize: 50,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 2),
+                        ),
+                        Text(
+                          "Z",
+                          style: TextStyle(
+                              color: Colors.redAccent,
+                              fontSize: 50,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 2),
+                        ),
+                      ],
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 30),
-              Padding(
-                padding: const EdgeInsets.all(25),
-                child: TextField(
-                  style: const TextStyle(
-                      fontSize: 18,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold),
-                  controller: nameController,
-                  maxLines: 1,
-                  cursorColor: Colors.blueGrey,
-                  decoration: const InputDecoration(
-                    isCollapsed: true,
-                    isDense: true,
-                    counterText: "",
-                    hintText: 'Enter Your Name',
-                    hintStyle: TextStyle(fontSize: 18),
-                    contentPadding: EdgeInsets.all(20),
-                    border: OutlineInputBorder(),
-                  ),
-                ),
+              const SizedBox(height: 75),
+              Image.asset(
+                'assets/images/splash_screen_image.png',
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 100),
               SizedBox(
                 width: 180.0,
                 height: 50.0,
                 child: ElevatedButton(
-                    onPressed: () {
-                      if (nameController.text.isEmpty) {
-                        Get.snackbar(
-                          "Error",
-                          "Please Enter Name",
-                          icon: const Icon(Icons.error, color: Colors.red),
-                          snackPosition: SnackPosition.BOTTOM,
-                        );
-                      }
-                    },
+                    onPressed: () {},
                     style: ButtonStyle(
                         backgroundColor:
-                            MaterialStateProperty.all(Colors.indigo.shade500),
+                            MaterialStateProperty.all(Colors.redAccent),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
@@ -95,7 +78,6 @@ class SplashScreen extends StatelessWidget {
                       ],
                     )),
               ),
-              const SizedBox(width: 50),
             ],
           ),
         ));
