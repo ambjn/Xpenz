@@ -122,6 +122,102 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             const SizedBox(height: 250),
+            //
+            Container(
+              alignment: Alignment.bottomLeft,
+              padding: const EdgeInsets.only(left: 25, right: 25),
+              child: const Text(
+                "Task",
+                style: TextStyle(fontSize: 22),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.only(left: 25, right: 25),
+              height: 325,
+              child: ListView.builder(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 3,
+                  itemBuilder: (context, index) {
+                    return Row(
+                      children: [
+                        Card(
+                          elevation: 2,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25),
+                          ),
+                          child: Column(
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.only(right: 10),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(25)),
+                                width: 225,
+                                height: 150,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Container(
+                                        width: 225 / 2,
+                                        height: 150,
+                                        decoration: BoxDecoration(
+                                            color: Colors.amber.shade50,
+                                            borderRadius:
+                                                const BorderRadius.only(
+                                                    topRight:
+                                                        Radius.circular(75),
+                                                    bottomLeft:
+                                                        Radius.circular(75),
+                                                    bottomRight:
+                                                        Radius.circular(75))),
+                                        child: const Center(
+                                            child: Icon(
+                                          FontAwesomeIcons.key,
+                                          color: Colors.amber,
+                                          size: 75,
+                                        ))),
+                                    Center(
+                                      child: Text(
+                                        "01",
+                                        style: TextStyle(
+                                            fontSize: 75,
+                                            color: Colors.amber.shade100,
+                                            letterSpacing: 1.5),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(height: 30),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: const [
+                                  SizedBox(height: 2.5),
+                                  Text(
+                                    "Complete KYC",
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  SizedBox(height: 15),
+                                  Text(
+                                    "Complete KYC and earn ₹25",
+                                    style: TextStyle(fontSize: 12),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(width: 20),
+                      ],
+                    );
+                  }),
+            ),
+            const SizedBox(height: 250),
+
 //
             Container(
               alignment: Alignment.bottomLeft,
