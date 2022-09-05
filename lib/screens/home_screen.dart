@@ -80,7 +80,129 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-            const SizedBox(height: 750),
+            const SizedBox(height: 25),
+
+            Container(
+              padding: const EdgeInsets.only(left: 5, right: 2.5),
+              height: 1000,
+              width: MediaQuery.of(context).size.width - 50,
+              decoration: BoxDecoration(
+                  color: Colors.indigo.shade500,
+                  borderRadius: BorderRadius.circular(30)),
+              child: Column(
+                children: [
+                  Container(
+                    color: Colors.pink,
+                    height: 650,
+                    child: Column(
+                      children: [Text("data")],
+                    ),
+                  ),
+                  Container(
+                    color: Colors.pink,
+                    height: 350,
+                    child: Row(
+                      children: [
+                        Column(
+                          children: [
+                            const SizedBox(height: 50),
+                            Container(
+                              height: 120,
+                              width: 150,
+                              decoration: BoxDecoration(
+                                  color: Colors.grey.shade50,
+                                  borderRadius: BorderRadius.circular(30)),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Row(
+                                      children: const [
+                                        Icon(
+                                          FontAwesomeIcons.coins,
+                                          color: Colors.amber,
+                                        ),
+                                        SizedBox(width: 15),
+                                        Text(
+                                          "Projected\nSaving",
+                                        )
+                                      ],
+                                    ),
+                                    const SizedBox(height: 10),
+                                    const Text("5000",
+                                        style: TextStyle(fontSize: 20))
+                                  ],
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 10),
+                            Container(
+                              height: 120,
+                              width: 150,
+                              decoration: BoxDecoration(
+                                  color: Colors.grey.shade50,
+                                  borderRadius: BorderRadius.circular(30)),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Row(
+                                      children: const [
+                                        Icon(
+                                          FontAwesomeIcons.burger,
+                                          color: Colors.red,
+                                        ),
+                                        SizedBox(width: 15),
+                                        Text(
+                                          "Highest\nSpend",
+                                        )
+                                      ],
+                                    ),
+                                    const SizedBox(height: 10),
+                                    const Text("7000",
+                                        style: TextStyle(fontSize: 20))
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(width: 15),
+                        Container(
+                          height: 250,
+                          width: 125,
+                          decoration: BoxDecoration(
+                              color: Colors.grey.shade50,
+                              borderRadius: BorderRadius.circular(30)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                const SizedBox(height: 25),
+                                Row(
+                                  children: const [
+                                    Text("Card Balance",
+                                        style: TextStyle(fontSize: 16))
+                                  ],
+                                ),
+                                const SizedBox(height: 10),
+                                const Text("5000",
+                                    style: TextStyle(fontSize: 25)),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            const SizedBox(height: 250),
+
             Container(
                 height: 75,
                 width: double.infinity,
