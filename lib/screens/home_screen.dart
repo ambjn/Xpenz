@@ -79,6 +79,39 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             const SizedBox(height: 750),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(children: [
+                Column(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                          color: Colors.transparent,
+                          border: Border.all(color: Colors.grey.shade300),
+                          borderRadius: BorderRadius.circular(50)),
+                      height: 75,
+                      width: 75,
+                      child: IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            FontAwesomeIcons.burger,
+                            size: 40,
+                            color: Colors.orangeAccent,
+                          )),
+                    ),
+                    const SizedBox(height: 15),
+                    const Text(
+                      "Food",
+                      style: TextStyle(fontSize: 16),
+                    )
+                  ],
+                ),
+                const SizedBox(width: 25),
+                //
+              ]),
+            ),
+            const SizedBox(height: 250),
+//
             Container(
               alignment: Alignment.bottomLeft,
               padding: const EdgeInsets.only(left: 25, right: 25),
@@ -176,7 +209,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ///
             ///
             ///
-            const SizedBox(height: 150),
             Container(
               alignment: Alignment.bottomLeft,
               padding: const EdgeInsets.only(left: 25, right: 25),
@@ -186,7 +218,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             const SizedBox(height: 10),
-
             Container(
               padding: const EdgeInsets.only(left: 25, right: 25),
               height: 325,
@@ -272,6 +303,31 @@ class _HomeScreenState extends State<HomeScreen> {
                     );
                   }),
             ),
+            const SizedBox(height: 30),
+            Container(
+              alignment: Alignment.bottomLeft,
+              padding: const EdgeInsets.only(left: 25),
+              child: Column(
+                children: [
+                  IntrinsicHeight(
+                    child: Row(
+                      children: const [
+                        VerticalDivider(
+                          color: Colors.grey,
+                          thickness: 3,
+                        ),
+                        SizedBox(width: 10),
+                        Text(
+                          "A budget doesn't \nlimit your freedom;\nit gives you\nfreedom",
+                          style: TextStyle(color: Colors.grey, fontSize: 30),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(height: 25),
           ],
         ),
       )),
