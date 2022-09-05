@@ -83,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 25),
 
             Container(
-              padding: const EdgeInsets.only(left: 5, right: 2.5),
+              padding: const EdgeInsets.only(left: 7.5, right: 2.5),
               height: 1000,
               width: MediaQuery.of(context).size.width - 50,
               decoration: BoxDecoration(
@@ -98,8 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [Text("data")],
                     ),
                   ),
-                  Container(
-                    color: Colors.pink,
+                  SizedBox(
                     height: 350,
                     child: Row(
                       children: [
@@ -179,8 +178,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                const SizedBox(height: 25),
+                                const SizedBox(height: 35),
                                 Row(
                                   children: const [
                                     Text("Card Balance",
@@ -190,6 +190,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                 const SizedBox(height: 10),
                                 const Text("5000",
                                     style: TextStyle(fontSize: 25)),
+                                const SizedBox(height: 30),
+                                ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: Colors.indigo.shade300,
+                                      shape: const CircleBorder(),
+                                      padding: const EdgeInsets.all(30),
+                                    ),
+                                    onPressed: () {},
+                                    child: const Text("ADD"))
                               ],
                             ),
                           ),
