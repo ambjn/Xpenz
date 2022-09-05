@@ -81,6 +81,63 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             const SizedBox(height: 750),
+            Container(
+                height: 75,
+                width: double.infinity,
+                padding: const EdgeInsets.only(left: 25, right: 25),
+                child: Card(
+                    color: Colors.grey.shade50,
+                    elevation: 2,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    child: SizedBox(
+                      height: 100,
+                      width: 175,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                              padding: const EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                  color: Colors.indigo.shade50,
+                                  borderRadius: BorderRadius.circular(20)),
+                              child: Row(
+                                children: const [
+                                  Icon(
+                                    FontAwesomeIcons.house,
+                                    color: Colors.indigo,
+                                  ),
+                                  SizedBox(width: 15),
+                                  Text(
+                                    "Home",
+                                    style: TextStyle(color: Colors.indigo),
+                                  ),
+                                ],
+                              )),
+                          IconButton(
+                              onPressed: () {},
+                              icon: const Icon(
+                                FontAwesomeIcons.wallet,
+                                color: Colors.grey,
+                              )),
+                          IconButton(
+                              onPressed: () {},
+                              icon: const Icon(
+                                FontAwesomeIcons.chartPie,
+                                color: Colors.grey,
+                              )),
+                          IconButton(
+                              onPressed: () {},
+                              icon: const Icon(
+                                FontAwesomeIcons.lightbulb,
+                                color: Colors.grey,
+                              )),
+                        ],
+                      ),
+                    ))),
+            const SizedBox(height: 30),
+
             //Categories
             Container(
               alignment: Alignment.bottomLeft,
