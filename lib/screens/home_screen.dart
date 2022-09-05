@@ -154,8 +154,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       icon: FontAwesomeIcons.folderOpen,
                       headingText: "02",
                       headingTextColor: Colors.green.shade100,
-                      contentHeadingText: "Complete Cateogory",
-                      contentText: "Complete Cateogory and earn ₹25",
+                      contentHeadingText: "Complete Category",
+                      contentText: "Complete Category and earn ₹25",
                     ),
                     CustomTask(
                       iconBackgroundColor: Colors.red.shade50,
