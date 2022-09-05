@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:xpenz/widgets/custom_icon.dart';
+import 'package:xpenz/widgets/custom_task.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -80,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             const SizedBox(height: 750),
-            //
+            //Categories
             Container(
               alignment: Alignment.bottomLeft,
               padding: const EdgeInsets.only(left: 25, right: 25),
@@ -118,11 +119,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontAwesomeIcons: FontAwesomeIcons.heartCircleCheck,
                       iconText: "Health",
                       iconColor: Colors.redAccent),
+                  SizedBox(width: 25),
                 ]),
               ),
             ),
-            const SizedBox(height: 250),
-            //
+            const SizedBox(height: 35),
+            //Task
             Container(
               alignment: Alignment.bottomLeft,
               padding: const EdgeInsets.only(left: 25, right: 25),
@@ -131,94 +133,46 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: TextStyle(fontSize: 22),
               ),
             ),
-            Container(
-              padding: const EdgeInsets.only(left: 25, right: 25),
-              height: 325,
-              child: ListView.builder(
-                  padding: const EdgeInsets.symmetric(vertical: 20),
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 3,
-                  itemBuilder: (context, index) {
-                    return Row(
-                      children: [
-                        Card(
-                          elevation: 2,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(25),
-                          ),
-                          child: Column(
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.only(right: 10),
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(25)),
-                                width: 225,
-                                height: 150,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Container(
-                                        width: 225 / 2,
-                                        height: 150,
-                                        decoration: BoxDecoration(
-                                            color: Colors.amber.shade50,
-                                            borderRadius:
-                                                const BorderRadius.only(
-                                                    topRight:
-                                                        Radius.circular(75),
-                                                    bottomLeft:
-                                                        Radius.circular(75),
-                                                    bottomRight:
-                                                        Radius.circular(75))),
-                                        child: const Center(
-                                            child: Icon(
-                                          FontAwesomeIcons.key,
-                                          color: Colors.amber,
-                                          size: 75,
-                                        ))),
-                                    Center(
-                                      child: Text(
-                                        "01",
-                                        style: TextStyle(
-                                            fontSize: 75,
-                                            color: Colors.amber.shade100,
-                                            letterSpacing: 1.5),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                              const SizedBox(height: 30),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: const [
-                                  SizedBox(height: 2.5),
-                                  Text(
-                                    "Complete KYC",
-                                    style: TextStyle(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  SizedBox(height: 15),
-                                  Text(
-                                    "Complete KYC and earn ₹25",
-                                    style: TextStyle(fontSize: 12),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(width: 20),
-                      ],
-                    );
-                  }),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 25, top: 15),
+                child: Row(
+                  children: [
+                    CustomTask(
+                      iconBackgroundColor: Colors.amber.shade50,
+                      iconColor: Colors.amber,
+                      icon: FontAwesomeIcons.key,
+                      headingText: "01",
+                      headingTextColor: Colors.amber.shade100,
+                      contentHeadingText: "Complete KYC",
+                      contentText: "Complete KYC and earn ₹25",
+                    ),
+                    CustomTask(
+                      iconBackgroundColor: Colors.green.shade50,
+                      iconColor: Colors.green,
+                      icon: FontAwesomeIcons.folderOpen,
+                      headingText: "02",
+                      headingTextColor: Colors.green.shade100,
+                      contentHeadingText: "Complete Cateogory",
+                      contentText: "Complete Cateogory and earn ₹25",
+                    ),
+                    CustomTask(
+                      iconBackgroundColor: Colors.red.shade50,
+                      iconColor: Colors.red,
+                      icon: FontAwesomeIcons.checkDouble,
+                      headingText: "03",
+                      headingTextColor: Colors.red.shade100,
+                      contentHeadingText: "Complete Verificaton",
+                      contentText: "Complete Verificaton and earn ₹25",
+                    ),
+                  ],
+                ),
+              ),
             ),
-            const SizedBox(height: 250),
-
-//
+            const SizedBox(width: 25),
+            const SizedBox(height: 30),
+            //Offers & Rewards
             Container(
               alignment: Alignment.bottomLeft,
               padding: const EdgeInsets.only(left: 25, right: 25),
@@ -312,10 +266,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     );
                   }),
             ),
-
-            ///
-            ///
-            ///
+            const SizedBox(height: 10),
+            //Blogs
             Container(
               alignment: Alignment.bottomLeft,
               padding: const EdgeInsets.only(left: 25, right: 25),
@@ -410,7 +362,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     );
                   }),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 50),
             Container(
               alignment: Alignment.bottomLeft,
               padding: const EdgeInsets.only(left: 25),
