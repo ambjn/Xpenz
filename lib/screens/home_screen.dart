@@ -80,10 +80,19 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             const SizedBox(height: 750),
+            //
+            Container(
+              alignment: Alignment.bottomLeft,
+              padding: const EdgeInsets.only(left: 25, right: 25),
+              child: const Text(
+                "Categories",
+                style: TextStyle(fontSize: 22),
+              ),
+            ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Padding(
-                padding: const EdgeInsets.all(8),
+                padding: const EdgeInsets.only(left: 25, top: 15),
                 child: Row(children: const [
                   CustomIcon(
                       fontAwesomeIcons: FontAwesomeIcons.burger,
