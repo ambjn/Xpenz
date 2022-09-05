@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:xpenz/screens/adding_transaction_screen.dart';
 import 'package:xpenz/screens/home_screen.dart';
 import 'package:xpenz/screens/splash_screen.dart';
 
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       getPages: [
-        GetPage(name: '/', page: () => const SplashScreen()),
+        GetPage(name: '/', page: () => const AddingTransactionScreen()),
         GetPage(name: '/home', page: () => const HomeScreen()),
       ],
     );
