@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:xpenz/widgets/custom_icon.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -81,34 +82,35 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 750),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              child: Row(children: [
-                Column(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Colors.transparent,
-                          border: Border.all(color: Colors.grey.shade300),
-                          borderRadius: BorderRadius.circular(50)),
-                      height: 75,
-                      width: 75,
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            FontAwesomeIcons.burger,
-                            size: 40,
-                            color: Colors.orangeAccent,
-                          )),
-                    ),
-                    const SizedBox(height: 15),
-                    const Text(
-                      "Food",
-                      style: TextStyle(fontSize: 16),
-                    )
-                  ],
-                ),
-                const SizedBox(width: 25),
-                //
-              ]),
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: Row(children: const [
+                  CustomIcon(
+                      fontAwesomeIcons: FontAwesomeIcons.burger,
+                      iconText: "Food",
+                      iconColor: Colors.orangeAccent),
+                  SizedBox(width: 25),
+                  CustomIcon(
+                      fontAwesomeIcons: FontAwesomeIcons.paw,
+                      iconText: "Pet",
+                      iconColor: Colors.pinkAccent),
+                  SizedBox(width: 25),
+                  CustomIcon(
+                      fontAwesomeIcons: FontAwesomeIcons.bagShopping,
+                      iconText: "Shopping",
+                      iconColor: Colors.indigoAccent),
+                  SizedBox(width: 25),
+                  CustomIcon(
+                      fontAwesomeIcons: FontAwesomeIcons.video,
+                      iconText: "Entertainment",
+                      iconColor: Colors.greenAccent),
+                  SizedBox(width: 25),
+                  CustomIcon(
+                      fontAwesomeIcons: FontAwesomeIcons.heartCircleCheck,
+                      iconText: "Health",
+                      iconColor: Colors.redAccent),
+                ]),
+              ),
             ),
             const SizedBox(height: 250),
 //
