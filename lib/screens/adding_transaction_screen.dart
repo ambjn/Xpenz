@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:xpenz/screens/home_screen.dart';
 
 class AddingTransactionScreen extends StatefulWidget {
   const AddingTransactionScreen({super.key});
@@ -79,6 +80,12 @@ class _AddingTransactionScreenState extends State<AddingTransactionScreen> {
             Padding(
               padding: const EdgeInsets.all(15),
               child: TextField(
+                onTap: () => amountController.text = '',
+                onChanged: (val) {
+                  if (int.parse(val) >= 50000) {
+                    amountController.text = "50000";
+                  }
+                },
                 style: const TextStyle(
                     fontSize: 18,
                     color: Colors.black,
@@ -279,7 +286,9 @@ class _AddingTransactionScreenState extends State<AddingTransactionScreen> {
               ),
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () => Get.to(() => HomeScreen(
+                    amount: amountController.text,
+                  )),
               child: Container(
                 width: MediaQuery.of(context).size.width - 40,
                 height: 45,

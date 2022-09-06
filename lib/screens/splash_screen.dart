@@ -57,7 +57,9 @@ class SplashScreen extends StatelessWidget {
                 width: 180.0,
                 height: 50.0,
                 child: ElevatedButton(
-                    onPressed: () => Get.to(() => const HomeScreen()),
+                    onPressed: () => Get.to(() => HomeScreen(
+                          amount: "",
+                        )),
                     style: ButtonStyle(
                         backgroundColor:
                             MaterialStateProperty.all(Colors.redAccent),

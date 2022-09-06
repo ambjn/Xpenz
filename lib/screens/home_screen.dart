@@ -1,12 +1,15 @@
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:xpenz/screens/adding_transaction_screen.dart';
 import 'package:xpenz/widgets/custom_icon.dart';
 import 'package:xpenz/widgets/custom_task.dart';
+import 'package:xpenz/widgets/line_chart.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key, required this.amount});
+  String amount = "";
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -92,30 +95,40 @@ class _HomeScreenState extends State<HomeScreen> {
                   borderRadius: BorderRadius.circular(30)),
               child: Column(
                 children: [
-                  Container(
-                    // color: Colors.pink,
-                    height: 650,
-                    child: LineChart(
-                      LineChartData(
-                        borderData: FlBorderData(
-                          show: false,
-                        ),
-                        lineBarsData: [
-                          LineChartBarData(
-                            // spots: getPlotPoints(snapshot.data!),
-                            spots: [FlSpot(1, 4), FlSpot(3, 8)],
-                            isCurved: true,
-                            barWidth: 2.5,
-                            color: Colors.red,
-                            showingIndicators: [200, 200, 90, 10],
-                            dotData: FlDotData(
-                              show: true,
+                  const SizedBox(height: 25),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: const [
+                            Text(
+                              "Total Spends",
+                              style: TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.white),
                             ),
-                          ),
-                        ],
-                      ),
+                          ],
+                        ),
+                        const SizedBox(height: 15),
+                        Row(
+                          children: [
+                            Text(
+                              "₹${widget.amount}",
+                              style: const TextStyle(
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
+                  const SizedBox(height: 25),
+                  SizedBox(height: 300, child: CustomLineChart()),
+                  const SizedBox(height: 25),
                   SizedBox(
                     height: 350,
                     child: Row(
@@ -147,7 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ],
                                     ),
                                     const SizedBox(height: 10),
-                                    const Text("5000",
+                                    const Text("₹2000",
                                         style: TextStyle(fontSize: 20))
                                   ],
                                 ),
@@ -178,7 +191,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ],
                                     ),
                                     const SizedBox(height: 10),
-                                    const Text("7000",
+                                    const Text("₹2000",
                                         style: TextStyle(fontSize: 20))
                                   ],
                                 ),
@@ -206,7 +219,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ],
                                 ),
                                 const SizedBox(height: 10),
-                                const Text("5000",
+                                const Text("₹1500",
                                     style: TextStyle(fontSize: 25)),
                                 const SizedBox(height: 30),
                                 ElevatedButton(
@@ -215,7 +228,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                       shape: const CircleBorder(),
                                       padding: const EdgeInsets.all(30),
                                     ),
-                                    onPressed: () {},
+                                    onPressed: () =>
+                                        Get.to(() => AddingTransactionScreen()),
                                     child: const Text("ADD"))
                               ],
                             ),
