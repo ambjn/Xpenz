@@ -288,6 +288,7 @@ class _AddingTransactionScreenState extends State<AddingTransactionScreen> {
             TextButton(
               onPressed: () => Get.to(() => HomeScreen(
                     amount: amountController.text,
+                    quickNote: quickNoteController.text,
                   )),
               child: Container(
                 width: MediaQuery.of(context).size.width - 40,
