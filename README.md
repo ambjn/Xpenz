@@ -1,16 +1,29 @@
-# xpenz
+# Xpense
 
-A new Flutter project.
+## About:
 
-## Getting Started
+An expense tracking app.
 
-This project is a starting point for a Flutter application.
+## Packages:
 
-A few resources to get you started if this is your first Flutter project:
+<ul>
+<li> get: ^4.6.5 </li>
+<li> intl: ^0.17.0 </li>
+<li> font_awesome_flutter: ^10.1.0 </li>
+<li> fl_chart: ^0.55.1 </li>
+</ul>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Installation:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+In the command terminal, run the following commands:
+
+    $ git clone https://github.com/ambjn/Xpenz.git
+    $ cd Xpenz
+    $ flutter run
+
+## Screenshots:
+
+<center> 
+<img src = 'https://github.com/ambjn/Xpenz/blob/master/screenshots/1.png' alt='screenshot-of-app-1'>
+<img src = 'https://github.com/ambjn/Xpenz/blob/master/screenshots/2.png' alt='screenshot-of-app-2'>
+</center>
