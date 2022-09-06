@@ -8,8 +8,9 @@ import 'package:xpenz/widgets/custom_task.dart';
 import 'package:xpenz/widgets/line_chart.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({super.key, required this.amount});
-  String amount = "";
+  HomeScreen({super.key, this.amount, this.quickNote});
+  String? amount = "";
+  String? quickNote = "";
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -88,8 +89,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
             Container(
               padding: const EdgeInsets.only(left: 7.5, right: 2.5),
-              height: 1000,
-              width: MediaQuery.of(context).size.width - 50,
+              height: 825,
+              width: MediaQuery.of(context).size.width - 25,
               decoration: BoxDecoration(
                   color: Colors.indigo.shade500,
                   borderRadius: BorderRadius.circular(30)),
@@ -105,33 +106,48 @@ class _HomeScreenState extends State<HomeScreen> {
                             Text(
                               "Total Spends",
                               style: TextStyle(
-                                  fontSize: 22,
+                                  fontSize: 25,
                                   fontWeight: FontWeight.w400,
                                   color: Colors.white),
                             ),
                           ],
                         ),
-                        const SizedBox(height: 15),
+                        const SizedBox(height: 25),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              "₹${widget.amount}",
+                              widget.amount != null
+                                  ? "₹${widget.amount}"
+                                  : "₹0",
                               style: const TextStyle(
                                   fontSize: 28,
                                   fontWeight: FontWeight.w400,
                                   color: Colors.white),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(right: 8),
+                              child: Text(
+                                widget.quickNote != null
+                                    ? "${widget.quickNote}"
+                                    : "Quick Note",
+                                style: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w400,
+                                    color: Colors.white),
+                              ),
                             ),
                           ],
                         ),
                       ],
                     ),
                   ),
-                  const SizedBox(height: 25),
+                  const SizedBox(height: 50),
                   SizedBox(height: 300, child: CustomLineChart()),
-                  const SizedBox(height: 25),
                   SizedBox(
                     height: 350,
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Column(
                           children: [
@@ -228,8 +244,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                       shape: const CircleBorder(),
                                       padding: const EdgeInsets.all(30),
                                     ),
-                                    onPressed: () =>
-                                        Get.to(() => AddingTransactionScreen()),
+                                    onPressed: () => Get.to(
+                                        () => const AddingTransactionScreen()),
                                     child: const Text("ADD"))
                               ],
                             ),
@@ -241,9 +257,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-
-            const SizedBox(height: 250),
-
+            const SizedBox(height: 25),
             Container(
                 height: 75,
                 width: double.infinity,
